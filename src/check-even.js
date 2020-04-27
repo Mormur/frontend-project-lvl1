@@ -1,9 +1,10 @@
 import readlineSync from 'readline-sync';
-import { congrats, failure } from'./index.js';
+import { congrats, failure } from './index.js';
 
 const isEven = (number) => {
-	if (number % 2 === 0) {
-		return 'yes'}
+  if (number % 2 === 0) {
+    return 'yes';
+  }
 	return 'no';
 };
 
