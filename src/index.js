@@ -7,11 +7,9 @@ export const greeting = () => {
 };
 
 export const congrats = () => {
-	console.log(`Congratulations ${userName}!`);
+  console.log(`Congratulations ${userName}!`);
 };
 
 export const failure = () => {
-	console.log(`Let's try again, ${userName}!`);
+  console.log(`Let's try again, ${userName}!`);
 };
-
-
