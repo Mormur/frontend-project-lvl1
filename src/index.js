@@ -11,10 +11,27 @@ const maxNum = 100;
 
 export const randomNumber = () => Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 
-export const congrats = () => {
+const congrats = () => {
   console.log(`Congratulations ${userName}!`);
 };
 
-export const failure = () => {
+const failure = () => {
   console.log(`Let's try again, ${userName}!`);
+};
+
+export const engine = (rules, game) => {
+  rules();
+  for (let round = 1; round < 4;) {
+    const result = game();
+    if (result === true) {
+      round += 1;
+    }
+    if (round === 4) {
+      congrats();
+    }
+    if (result === false) {
+      failure();
+      break;
+    }
+  }
 };
