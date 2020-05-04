@@ -9,3 +9,6 @@ The brain-calc game: calculate the result of a mathematical expression.
 
 The brain-gcd game: find the greatest common divisor.
 [![asciicast](https://asciinema.org/a/ieMnHLWBa0XWmtkrshOWaTQPw.svg)](https://asciinema.org/a/ieMnHLWBa0XWmtkrshOWaTQPw)
+
+The brain-progression game: find the number that is missing in the progression.
+[![asciicast](https://asciinema.org/a/vcUfpxCVhkou6AT7RM2srqm9j.svg)](https://asciinema.org/a/vcUfpxCVhkou6AT7RM2srqm9j)
