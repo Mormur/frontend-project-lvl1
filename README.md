@@ -6,3 +6,6 @@ The brain-even game: answer "yes" if the number is even, otherwise answer "no".
 
 The brain-calc game: calculate the result of a mathematical expression.
 [![asciicast](https://asciinema.org/a/peNXBC8ptnLX37Ntzh1mOAGLl.svg)](https://asciinema.org/a/peNXBC8ptnLX37Ntzh1mOAGLl)
+
+The brain-gcd game: find the greatest common divisor.
+[![asciicast](https://asciinema.org/a/ieMnHLWBa0XWmtkrshOWaTQPw.svg)](https://asciinema.org/a/ieMnHLWBa0XWmtkrshOWaTQPw)
