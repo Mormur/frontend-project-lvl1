@@ -12,3 +12,6 @@ The brain-gcd game: find the greatest common divisor.
 
 The brain-progression game: find the number that is missing in the progression.
 [![asciicast](https://asciinema.org/a/vcUfpxCVhkou6AT7RM2srqm9j.svg)](https://asciinema.org/a/vcUfpxCVhkou6AT7RM2srqm9j)
+
+The brain-prime game: answer "yes" if the number is prime, otherwise answer "no".
+[![asciicast](https://asciinema.org/a/YmIa8hji8ysCkMHA1RiXyjDSa.svg)](https://asciinema.org/a/YmIa8hji8ysCkMHA1RiXyjDSa)
