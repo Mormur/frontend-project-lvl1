@@ -16,13 +16,13 @@ const isPrime = (number) => {
 export const rules = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 export const game = () => {
-  const givenNumber = randomNumber();
-  const userAnswer = readlineSync.question(`Question: ${givenNumber} \nYour answer: `);
-  if (userAnswer === isPrime(givenNumber)) {
+  const shownNumber = randomNumber();
+  const userAnswer = readlineSync.question(`Question: ${shownNumber} \nYour answer: `);
+  if (userAnswer === isPrime(shownNumber)) {
     console.log('Correct!');
     return true;
   }
-  console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${isPrime(givenNumber)}".`);
+  console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${isPrime(shownNumber)}".`);
   return false;
 };
 
