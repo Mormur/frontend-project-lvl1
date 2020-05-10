@@ -8,7 +8,7 @@ const isEven = (number) => {
   return 'no';
 };
 
-export const rules = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
+export const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 export const game = () => {
   const givenNumber = randomNumber();

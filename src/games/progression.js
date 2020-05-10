@@ -1,14 +1,15 @@
 import readlineSync from 'readline-sync';
 import { greeting, randomNumber, engine } from '../index.js';
 
-export const rules = () => console.log('What number is missing in the progression?');
+export const rules = 'What number is missing in the progression?';
 
 export const game = () => {
   const firstElement = randomNumber();
   const difference = randomNumber();
+  const amountNumbersInArray = 10;
   const arrayOfNumbers = [firstElement];
   let nextNumber = firstElement;
-  for (let i = 1; i <= 9; i += 1) {
+  for (let i = 1; i < amountNumbersInArray; i += 1) {
     nextNumber += difference;
     arrayOfNumbers.push(nextNumber);
   }

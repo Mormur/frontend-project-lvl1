@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { greeting, randomNumber, engine } from '../index.js';
 
-export const rules = () => console.log('Find the greatest common divisor of given numbers.');
+export const rules = 'Find the greatest common divisor of given numbers.';
 
 export const game = () => {
   const firstNumber = randomNumber();

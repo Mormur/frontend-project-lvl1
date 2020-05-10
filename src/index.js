@@ -6,10 +6,7 @@ export const greeting = () => {
   console.log(`Hi ${userName}!`);
 };
 
-const minNum = 1;
-const maxNum = 100;
-
-export const randomNumber = () => Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+export const randomNumber = (min = 1, max = 100) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const congrats = () => {
   console.log(`Congratulations ${userName}!`);
@@ -20,7 +17,7 @@ const failure = () => {
 };
 
 export const engine = (rules, game) => {
-  rules();
+  console.log(rules);
   for (let round = 1; round < 4;) {
     const result = game();
     if (result === true) {
