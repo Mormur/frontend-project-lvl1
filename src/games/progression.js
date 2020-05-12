@@ -18,9 +18,9 @@ export const game = () => {
   const index = Math.floor(Math.random() * (lastIndex - firstIndex + 1)) + firstIndex;
   const arrayWithGap = [...arrayOfNumbers];
   arrayWithGap[index] = '..';
-  const answer = readlineSync.question(`Question: ${arrayWithGap.join(' ')} \nYour answer: `);
-  const userAnswer = Number(answer);
-  const correctAnswer = arrayOfNumbers[index];
+  const userAnswer = readlineSync.question(`Question: ${arrayWithGap.join(' ')} \nYour answer: `);
+  const progression = arrayOfNumbers[index];
+  const correctAnswer = String(progression);
   return { userAnswer, correctAnswer };
 };
 

@@ -6,15 +6,15 @@ export const rules = 'Find the greatest common divisor of given numbers.';
 export const game = () => {
   const firstNumber = randomNumber();
   const secondNumber = randomNumber();
-  const answer = readlineSync.question(`Question: ${firstNumber} ${secondNumber} \nYour answer: `);
-  const userAnswer = Number(answer);
+  const userAnswer = readlineSync.question(`Question: ${firstNumber} ${secondNumber} \nYour answer: `);
   const smallerNumber = Math.min(firstNumber, secondNumber);
-  let correctAnswer;
+  let commonDivisor;
   for (let i = 1; i <= smallerNumber; i += 1) {
     if (firstNumber % i === 0 && secondNumber % i === 0) {
-      correctAnswer = i;
+      commonDivisor = i;
     }
   }
+  const correctAnswer = String(commonDivisor);
   return { userAnswer, correctAnswer };
 };
 

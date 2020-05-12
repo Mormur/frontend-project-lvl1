@@ -9,19 +9,19 @@ export const game = () => {
   const randomOperand = operands[randomOperandItem];
   const firstNumber = randomNumber();
   const secondNumber = randomNumber();
-  const answer = readlineSync.question(`Question: ${firstNumber} ${randomOperand} ${secondNumber} \nYour answer: `);
-  const userAnswer = Number(answer);
-  let correctAnswer;
+  const userAnswer = readlineSync.question(`Question: ${firstNumber} ${randomOperand} ${secondNumber} \nYour answer: `);
+  let resultOfCalculation;
   switch (randomOperand) {
     case '+':
-      correctAnswer = firstNumber + secondNumber;
+      resultOfCalculation = firstNumber + secondNumber;
       break;
     case '-':
-      correctAnswer = firstNumber - secondNumber;
+      resultOfCalculation = firstNumber - secondNumber;
       break;
     default:
-      correctAnswer = firstNumber * secondNumber;
+      resultOfCalculation = firstNumber * secondNumber;
   }
+  const correctAnswer = String(resultOfCalculation);
   return { userAnswer, correctAnswer };
 };
 
