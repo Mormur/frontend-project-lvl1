@@ -15,12 +15,7 @@ export const game = () => {
       correctAnswer = i;
     }
   }
-  if (userAnswer === correctAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-  return false;
+  return { userAnswer, correctAnswer };
 };
 
 export const commonDiv = () => {

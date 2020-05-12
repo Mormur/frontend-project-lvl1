@@ -13,12 +13,8 @@ export const rules = 'Answer "yes" if the number is even, otherwise answer "no".
 export const game = () => {
   const givenNumber = randomNumber();
   const userAnswer = readlineSync.question(`Question: ${givenNumber} \nYour answer: `);
-  if (userAnswer === isEven(givenNumber)) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${isEven(givenNumber)}".`);
-  return false;
+  const correctAnswer = isEven(givenNumber);
+  return { userAnswer, correctAnswer };
 };
 
 export const checkEven = () => {

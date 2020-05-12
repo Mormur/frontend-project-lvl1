@@ -19,14 +19,15 @@ const failure = () => {
 export const engine = (rules, game) => {
   console.log(rules);
   for (let round = 1; round < 4;) {
-    const result = game();
-    if (result === true) {
+    const { userAnswer, correctAnswer } = game();
+    if (userAnswer === correctAnswer) {
+      console.log('Correct!');
       round += 1;
     }
     if (round === 4) {
       congrats();
-    }
-    if (result === false) {
+    } if (userAnswer !== correctAnswer) {
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       failure();
       break;
     }

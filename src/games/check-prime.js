@@ -18,16 +18,14 @@ export const rules = 'Answer "yes" if given number is prime. Otherwise answer "n
 export const game = () => {
   const shownNumber = randomNumber();
   const userAnswer = readlineSync.question(`Question: ${shownNumber} \nYour answer: `);
-  if (userAnswer === 'yes' && isPrime(shownNumber) === true) {
-    console.log('Correct!');
-    return true;
+  let correctAnswer;
+  if (isPrime(shownNumber) === true) {
+    correctAnswer = 'yes';
   }
-  if (userAnswer === 'no' && isPrime(shownNumber) === false) {
-    console.log('Correct!');
-    return true;
+  if (isPrime(shownNumber) === false) {
+    correctAnswer = 'no';
   }
-  console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${isPrime(shownNumber)}".`);
-  return false;
+  return { userAnswer, correctAnswer };
 };
 
 export const checkPrime = () => {
