@@ -1,15 +1,14 @@
-import readlineSync from 'readline-sync';
-import { greeting, randomNumber, engine } from '../index.js';
+import { randomNumber, engine } from '../index.js';
 
 export const rules = 'What is the result of the expression?';
 
 export const game = () => {
   const operands = ['+', '-', '*'];
-  const randomOperandItem = Math.floor(Math.random() * operands.length);
+  const randomOperandItem = randomNumber(0, 2);
   const randomOperand = operands[randomOperandItem];
   const firstNumber = randomNumber();
   const secondNumber = randomNumber();
-  const userAnswer = readlineSync.question(`Question: ${firstNumber} ${randomOperand} ${secondNumber} \nYour answer: `);
+  const data = `${firstNumber} ${randomOperand} ${secondNumber}`;
   let resultOfCalculation;
   switch (randomOperand) {
     case '+':
@@ -18,14 +17,16 @@ export const game = () => {
     case '-':
       resultOfCalculation = firstNumber - secondNumber;
       break;
-    default:
+    case '*':
       resultOfCalculation = firstNumber * secondNumber;
+      break;
+    default:
+      resultOfCalculation = undefined;
   }
   const correctAnswer = String(resultOfCalculation);
-  return { userAnswer, correctAnswer };
+  return { data, correctAnswer };
 };
 
 export const calculator = () => {
-  greeting();
   engine(rules, game);
 };

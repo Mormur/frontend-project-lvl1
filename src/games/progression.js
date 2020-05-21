@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-import { greeting, randomNumber, engine } from '../index.js';
+import { randomNumber, engine } from '../index.js';
 
 export const rules = 'What number is missing in the progression?';
 
@@ -7,24 +6,22 @@ export const game = () => {
   const firstElement = randomNumber();
   const difference = randomNumber();
   const amountNumbersInArray = 10;
-  const arrayOfNumbers = [firstElement];
-  let nextNumber = firstElement;
+  const arrayOfNumbers = [];
   for (let i = 1; i < amountNumbersInArray; i += 1) {
-    nextNumber += difference;
-    arrayOfNumbers.push(nextNumber);
+    const addedElement = firstElement + difference * i;
+    arrayOfNumbers.push(addedElement);
   }
   const firstIndex = 0;
   const lastIndex = arrayOfNumbers.length - 1;
   const index = Math.floor(Math.random() * (lastIndex - firstIndex + 1)) + firstIndex;
   const arrayWithGap = [...arrayOfNumbers];
   arrayWithGap[index] = '..';
-  const userAnswer = readlineSync.question(`Question: ${arrayWithGap.join(' ')} \nYour answer: `);
+  const data = `${arrayWithGap.join(' ')}`;
   const progression = arrayOfNumbers[index];
   const correctAnswer = String(progression);
-  return { userAnswer, correctAnswer };
+  return { data, correctAnswer };
 };
 
 export const progression = () => {
-  greeting();
   engine(rules, game);
 };

@@ -1,12 +1,11 @@
-import readlineSync from 'readline-sync';
-import { greeting, randomNumber, engine } from '../index.js';
+import { randomNumber, engine } from '../index.js';
 
 export const rules = 'Find the greatest common divisor of given numbers.';
 
 export const game = () => {
   const firstNumber = randomNumber();
   const secondNumber = randomNumber();
-  const userAnswer = readlineSync.question(`Question: ${firstNumber} ${secondNumber} \nYour answer: `);
+  const data = `${firstNumber} ${secondNumber}`;
   const smallerNumber = Math.min(firstNumber, secondNumber);
   let commonDivisor;
   for (let i = 1; i <= smallerNumber; i += 1) {
@@ -15,10 +14,9 @@ export const game = () => {
     }
   }
   const correctAnswer = String(commonDivisor);
-  return { userAnswer, correctAnswer };
+  return { data, correctAnswer };
 };
 
 export const commonDiv = () => {
-  greeting();
   engine(rules, game);
 };
