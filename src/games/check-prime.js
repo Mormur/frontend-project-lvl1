@@ -1,4 +1,6 @@
-import { randomNumber, engine } from '../index.js';
+import engine from '../index.js';
+
+import randomNumber from '../tools.js';
 
 const isPrime = (number) => {
   if (number <= 1) {
@@ -12,14 +14,16 @@ const isPrime = (number) => {
   return true;
 };
 
-export const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export const game = () => {
-  const data = randomNumber();
-  const correctAnswer = isPrime(data) ? 'yes' : 'no';
-  return { data, correctAnswer };
+const getQuestionAndAnswer = () => {
+  const question = randomNumber();
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
+  return { question, correctAnswer };
 };
 
-export const checkPrime = () => {
-  engine(rules, game);
+const checkPrime = () => {
+  engine(description, getQuestionAndAnswer);
 };
+
+export default checkPrime;

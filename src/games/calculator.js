@@ -1,16 +1,19 @@
-import { randomNumber, engine } from '../index.js';
+import engine from '../index.js';
 
-export const rules = 'What is the result of the expression?';
+import randomNumber from '../tools.js';
 
-export const game = () => {
-  const operands = ['+', '-', '*'];
-  const randomOperandItem = randomNumber(0, 2);
-  const randomOperand = operands[randomOperandItem];
+const description = 'What is the result of the expression?';
+
+const getQuestionAndAnswer = () => {
+  const operators = ['+', '-', '*'];
+  const lastOperatorIndex = operators.length - 1;
+  const randomOperatorItem = randomNumber(0, lastOperatorIndex);
+  const randomOperator = operators[randomOperatorItem];
   const firstNumber = randomNumber();
   const secondNumber = randomNumber();
-  const data = `${firstNumber} ${randomOperand} ${secondNumber}`;
+  const question = `${firstNumber} ${randomOperator} ${secondNumber}`;
   let resultOfCalculation;
-  switch (randomOperand) {
+  switch (randomOperator) {
     case '+':
       resultOfCalculation = firstNumber + secondNumber;
       break;
@@ -21,12 +24,14 @@ export const game = () => {
       resultOfCalculation = firstNumber * secondNumber;
       break;
     default:
-      resultOfCalculation = undefined;
+      resultOfCalculation = null;
   }
   const correctAnswer = String(resultOfCalculation);
-  return { data, correctAnswer };
+  return { question, correctAnswer };
 };
 
-export const calculator = () => {
-  engine(rules, game);
+const calculator = () => {
+  engine(description, getQuestionAndAnswer);
 };
+
+export default calculator;

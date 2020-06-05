@@ -1,20 +1,19 @@
-import { randomNumber, engine } from '../index.js';
+import engine from '../index.js';
 
-const isEven = (number) => {
-  if (number % 2 === 0) {
-    return true;
-  }
-  return false;
+import randomNumber from '../tools.js';
+
+const isEven = (number) => number % 2 === 0;
+
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const getQuestionAndAnswer = () => {
+  const question = randomNumber();
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
+  return { question, correctAnswer };
 };
 
-export const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-export const game = () => {
-  const data = randomNumber();
-  const correctAnswer = isEven(data) ? 'yes' : 'no';
-  return { data, correctAnswer };
+const checkEven = () => {
+  engine(description, getQuestionAndAnswer);
 };
 
-export const checkEven = () => {
-  engine(rules, game);
-};
+export default checkEven;
