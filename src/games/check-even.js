@@ -12,8 +12,8 @@ const getQuestionAndAnswer = () => {
   return { question, correctAnswer };
 };
 
-const checkEven = () => {
+const startGame = () => {
   engine(description, getQuestionAndAnswer);
 };
 
-export default checkEven;
+export default startGame;

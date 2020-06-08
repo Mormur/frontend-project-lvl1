@@ -24,8 +24,8 @@ const getQuestionAndAnswer = () => {
   return { question, correctAnswer };
 };
 
-const commonDiv = () => {
+const startGame = () => {
   engine(description, getQuestionAndAnswer);
 };
 
-export default commonDiv;
+export default startGame;

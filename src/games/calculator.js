@@ -24,14 +24,14 @@ const getQuestionAndAnswer = () => {
       resultOfCalculation = firstNumber * secondNumber;
       break;
     default:
-      resultOfCalculation = null;
+      return null;
   }
   const correctAnswer = String(resultOfCalculation);
   return { question, correctAnswer };
 };
 
-const calculator = () => {
+const startGame = () => {
   engine(description, getQuestionAndAnswer);
 };
 
-export default calculator;
+export default startGame;

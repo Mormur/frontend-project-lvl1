@@ -22,8 +22,8 @@ const getQuestionAndAnswer = () => {
   return { question, correctAnswer };
 };
 
-const checkPrime = () => {
+const startGame = () => {
   engine(description, getQuestionAndAnswer);
 };
 
-export default checkPrime;
+export default startGame;

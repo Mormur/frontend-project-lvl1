@@ -15,17 +15,17 @@ const getQuestionAndAnswer = () => {
   }
   const firstIndex = 0;
   const lastIndex = progression.length - 1;
-  const indexOfGap = Math.floor(Math.random() * (lastIndex - firstIndex + 1)) + firstIndex;
+  const indexOfGap = randomNumber(firstIndex, lastIndex);
   const progressionWithGap = [...progression];
   progressionWithGap[indexOfGap] = '..';
-  const question = `${progressionWithGap.join(' ')}`;
+  const question = progressionWithGap.join(' ');
   const missedNumber = progression[indexOfGap];
   const correctAnswer = String(missedNumber);
   return { question, correctAnswer };
 };
 
-const progression = () => {
+const startGame = () => {
   engine(description, getQuestionAndAnswer);
 };
 
-export default progression;
+export default startGame;

@@ -5,24 +5,19 @@ const engine = (description, getQuestionAndAnswer) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hi ${userName}!`);
   console.log(description);
-  const amountOfRounds = 3;
-  for (let round = 1; round <= amountOfRounds;) {
+  const amountOfWinRounds = 3;
+  for (let round = 1; round <= amountOfWinRounds; round += 1) {
     const { question, correctAnswer } = getQuestionAndAnswer();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-      if (round === 3) {
-        console.log(`Congratulations ${userName}!`);
-      }
-      round += 1;
-    }
     if (userAnswer !== correctAnswer) {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       console.log(`Let's try again, ${userName}!`);
-      break;
+      return;
     }
+    console.log('Correct!');
   }
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default engine;
