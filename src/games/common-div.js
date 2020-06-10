@@ -4,7 +4,7 @@ import randomNumber from '../tools.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const findCommonDivisor = (firstNumber, secondNumber) => {
+const findGreateCommonDivisor = (firstNumber, secondNumber) => {
   const smallerNumber = Math.min(firstNumber, secondNumber);
   let commonDivisor = 1;
   for (let i = 2; i <= smallerNumber; i += 1) {
@@ -19,7 +19,7 @@ const getQuestionAndAnswer = () => {
   const firstNumber = randomNumber();
   const secondNumber = randomNumber();
   const question = `${firstNumber} ${secondNumber}`;
-  const commonDivisor = findCommonDivisor(firstNumber, secondNumber);
+  const commonDivisor = findGreateCommonDivisor(firstNumber, secondNumber);
   const correctAnswer = String(commonDivisor);
   return { question, correctAnswer };
 };
